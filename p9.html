@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @keyframes wobble {
+      25% { transform: translateX(5px) rotate(5deg); }
+      50% { transform: translateX(-5px) rotate(-5deg); }
+      75% { transform: translateX(3px) rotate(3deg); }
+      100% { transform: translateX(0) rotate(0); }
+    }
+
+    .animated-button {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 16px;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      border: 2px solid #e74c3c;
+      color: #1868BF;
+      border-radius: 5px;
+      overflow: hidden;
+      position: relative;
+      transition: color 0.3s ease-in-out;
+    }
+
+    .animated-button:hover {
+      color: #fff;
+      animation: wobble 0.5s ease infinite;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#" class="animated-button">Go to Graphesee</a>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes particle {
+      0% {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+      }
+      100% {
+        transform: translate(calc(100vw + 50%), calc(100vh + 50%));
+        opacity: 0;
+      }
+    }
+
+    .animated-button {
+      display: inline-block;
+      padding: 30px 60px;
+      font-size: 28px;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      color: #fff;
+      background: linear-gradient(45deg, #9b59b6, #3498db, #e74c3c);
+      background-size: 200% 200%;
+      border-radius: 50px;
+      overflow: hidden;
+      position: relative;
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+      animation: pulse 3s infinite ease-in-out;
+    }
+
+    .particle {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: rgba(255, 255, 255, 0.7);
+      border-radius: 50%;
+      animation: particle 5s infinite;
+    }
+
+    .animated-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px rgba(255, 255, 255, 0.8);
+    }
+
+    .animated-button:hover .particle {
+      animation: particle 2s infinite;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#" class="animated-button">
+    Mesmerizing Button
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+    <div class="particle"></div>
+  </a>
+
+</body>
+</html>

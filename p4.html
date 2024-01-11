@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expensive Button</title>
+  <style>
+    .expensive-button {
+      display: inline-block;
+      padding: 15px 30px;
+      font-size: 18px;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 30px;
+      background: linear-gradient(45deg, #ff8c00, #ffc107);
+      color: #fff;
+      border: 2px solid #ffc107;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      transition: background 0.3s, color 0.3s, transform 0.2s ease-out;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .expensive-button:hover {
+      background: linear-gradient(45deg, #ffc107, #ff8c00);
+      color: #fff;
+      transform: scale(1.05);
+    }
+
+    .expensive-button:before {
+      content: "";
+      background: rgba(255, 255, 255, 0.3);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .expensive-button:hover:before {
+      opacity: 1;
+    }
+
+    .expensive-button:after {
+      content: "\2022 \2022 \2022";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 2em;
+      color: rgba(255, 255, 255, 0.5);
+      z-index: 2;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .expensive-button:hover:after {
+      opacity: 1;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .expensive-button.pulsate:hover {
+      animation: pulse 1s infinite;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#" class="expensive-button pulsate">Click me</a>
+
+</body>
+</html>

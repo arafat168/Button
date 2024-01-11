@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes glow {
+      0%, 100% { box-shadow: 0 0 20px rgba(46, 204, 113, 0.8), 0 0 40px rgba(46, 204, 113, 0.6); }
+      50% { box-shadow: 0 0 30px rgba(46, 204, 113, 1), 0 0 50px rgba(46, 204, 113, 0.8); }
+    }
+
+    .animated-button {
+      display: inline-block;
+      padding: 20px 40px;
+      font-size: 24px;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      color: #fff;
+      background: linear-gradient(45deg, #2ecc71, #3498db, #e74c3c);
+      background-size: 200% 200%;
+      border-radius: 50px;
+      overflow: hidden;
+      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: pulse 2s infinite ease-in-out;
+    }
+
+    .animated-button::before,
+    .animated-button::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50px;
+      opacity: 0;
+      z-index: -1;
+    }
+
+    .animated-button::before {
+      background: radial-gradient(circle at 30% 107%, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 72%);
+      transition: opacity 0.5s ease;
+    }
+
+    .animated-button::after {
+      background: radial-gradient(circle at 70% 107%, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0) 72%);
+      transition: opacity 0.5s ease;
+    }
+
+    .animated-button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 30px rgba(46, 204, 113, 0.8);
+    }
+
+    .animated-button:hover::before,
+    .animated-button:hover::after {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#" class="animated-button">Graphesee is a Beautiful</a>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @keyframes glow {
+      0%, 100% { box-shadow: 0 0 20px rgba(255, 223, 87, 0.8); }
+      50% { box-shadow: 0 0 30px rgba(255, 223, 87, 1), 0 0 50px rgba(255, 223, 87, 0.8); }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    .animated-button {
+      display: inline-block;
+      padding: 20px 40px;
+      font-size: 24px;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      color: #fff;
+      background: linear-gradient(45deg, #3498db, #e74c3c, #9b59b6);
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: glow 2s infinite alternate, float 3s infinite ease-in-out;
+    }
+
+    .particle {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background-color: rgba(255, 223, 87, 0.8);
+      border-radius: 50%;
+      animation: float 3s infinite ease-in-out;
+    }
+
+    .animated-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px rgba(255, 223, 87, 0.8);
+    }
+
+    .animated-button:hover .particle {
+      animation: float 1s infinite ease-in-out;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="animated-button">
+    <div class="particle"></div>
+    Glowing Beauty
+  </div>
+
+</body>
+</html>

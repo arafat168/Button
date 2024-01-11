@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @keyframes rotate {
+      0% { transform: rotateY(0) rotateX(0) perspective(800px); }
+      100% { transform: rotateY(360deg) rotateX(360deg) perspective(800px); }
+    }
+
+    @keyframes shadow {
+      0% { box-shadow: 0 0 20px rgba(231, 76, 60, 0.6); }
+      50% { box-shadow: 0 0 30px rgba(231, 76, 60, 0.8); }
+      100% { box-shadow: 0 0 20px rgba(231, 76, 60, 0.6); }
+    }
+
+    @keyframes glow {
+      0% { background: linear-gradient(45deg, #3498db, #e74c3c, #9b59b6); }
+      50% { background: linear-gradient(45deg, #9b59b6, #3498db, #e74c3c); }
+    }
+
+    @keyframes particle {
+      0% {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+      }
+      100% {
+        transform: translate(calc(100vw + 50%), calc(100vh + 50%));
+        opacity: 0;
+      }
+    }
+
+    .animated-button {
+      display: inline-block;
+      padding: 40px 80px;
+      font-size: 32px;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      color: #fff;
+      background: linear-gradient(45deg, #3498db, #e74c3c, #9b59b6);
+      background-size: 200% 200%;
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      transition: transform 0.5s ease, box-shadow 0.5s ease, background 0.5s ease;
+      animation: rotate 5s infinite linear, shadow 3s infinite ease-in-out, glow 4s infinite alternate;
+    }
+
+    .particle {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 50%;
+      animation: particle 5s infinite;
+    }
+
+    .animated-button:hover {
+      transform: scale(1.05) rotateY(360deg) rotateX(360deg) perspective(800px);
+      box-shadow: 0 0 40px rgba(231, 76, 60, 0.8);
+      background: linear-gradient(45deg, #9b59b6, #3498db, #e74c3c);
+    }
+
+    .animated-button:hover .particle {
+      animation: particle 2s infinite;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="animated-button">
+    <div class="particle"></div>
+    Graphesee
+
+</body>
+</html>

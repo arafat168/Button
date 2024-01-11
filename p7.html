@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colorful Buttons</title>
+  <style>
+    .colorful-button {
+      display: inline-block;
+      padding: 15px 30px;
+      font-size: 18px;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 50px;
+      color: #fff;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      position: relative;
+      overflow: hidden;
+      transition: background 0.5s, color 0.5s, transform 0.3s ease-out, box-shadow 0.3s;
+    }
+
+    /* Red Button */
+    .red-button {
+      background: linear-gradient(45deg, #FF4E50, #F9D423);
+      border: 3px solid #FF4E50;
+    }
+
+    /* Blue Button */
+    .blue-button {
+      background: linear-gradient(45deg, #3498db, #6C5B7B);
+      border: 3px solid #3498db;
+    }
+
+    /* Green Button */
+    .green-button {
+      background: linear-gradient(45deg, #56ab2f, #a8e063);
+      border: 3px solid #56ab2f;
+    }
+
+    /* Purple Button */
+    .purple-button {
+      background: linear-gradient(45deg, #833ab4, #fd1d1d, #fcb045);
+      border: 3px solid #833ab4;
+    }
+
+    /* Orange Button */
+    .orange-button {
+      background: linear-gradient(45deg, #FF8008, #FFC837);
+      border: 3px solid #FF8008;
+    }
+
+    /* Customize hover effects if needed */
+    .colorful-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#" class="colorful-button red-button">Red Button</a>
+  <a href="#" class="colorful-button blue-button">Blue Button</a>
+  <a href="#" class="colorful-button green-button">Green Button</a>
+  <a href="#" class="colorful-button purple-button">Purple Button</a>
+  <a href="#" class="colorful-button orange-button">Orange Button</a>
+
+</body>
+</html>

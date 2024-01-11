@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luxurious Button</title>
+  <style>
+    .luxurious-button {
+      display: inline-block;
+      padding: 20px 40px;
+      font-size: 24px;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 50px;
+      background: linear-gradient(45deg, #e74c3c, #3498db);
+      color: #fff;
+      border: 3px solid #ecf0f1;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      position: relative;
+      overflow: hidden;
+      transition: background 0.5s, color 0.5s, transform 0.3s ease-out;
+    }
+
+    .luxurious-button:hover {
+      background: linear-gradient(45deg, #3498db, #e74c3c);
+      color: #fff;
+      transform: scale(1.05);
+    }
+
+    .luxurious-button:before {
+      content: "";
+      background: linear-gradient(90deg, rgba(255,255,255,0.1), rgba(255,255,255,0.2), rgba(255,255,255,0.1));
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      opacity: 0;
+      transition: opacity 0.5s;
+    }
+
+    .luxurious-button:hover:before {
+      opacity: 1;
+    }
+
+    .luxurious-button:after {
+      content: "\2022 \2022 \2022";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 2em;
+      color: rgba(255, 255, 255, 0.8);
+      z-index: 2;
+      opacity: 0;
+      transition: opacity 0.5s;
+    }
+
+    .luxurious-button:hover:after {
+      opacity: 1;
+    }
+
+    @keyframes shimmer {
+      0% {
+        background-position: -200% -200%;
+      }
+      100% {
+        background-position: 200% 200%;
+      }
+    }
+
+    .luxurious-button.shimmer:hover {
+      background-size: 200% 200%;
+      animation: shimmer 5s infinite;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+      position: fixed;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#" class="luxurious-button shimmer">Click me</a>
+
+</body>
+</html>

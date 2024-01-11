@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .animated-button {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 16px;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      border: 2px solid #3498db;
+      color: #3498db;
+      border-radius: 5px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .animated-button::before {
+      content: "";
+      background: #34db4d;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 0;
+      height: 100%;
+      z-index: -1;
+      transition: width 0.3s ease-out;
+    }
+
+    .animated-button:hover::before {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#" class="animated-button">Click me</a>
+
+</body>
+</html>

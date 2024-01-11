@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @keyframes wave {
+      0%, 100% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+    }
+
+    @keyframes particles {
+      0% {
+        transform: translate(-50%, -50%);
+        opacity: 1;
+      }
+      100% {
+        transform: translate(calc(100vw + 50%), calc(100vh + 50%));
+        opacity: 0;
+      }
+    }
+
+    @keyframes glow {
+      0%, 100% {
+        box-shadow: 0 0 20px rgba(255, 192, 203, 0.8);
+      }
+      50% {
+        box-shadow: 0 0 30px rgba(255, 192, 203, 1), 0 0 50px rgba(255, 192, 203, 0.8);
+      }
+    }
+
+    .animated-button {
+      display: inline-block;
+      padding: 40px 80px;
+      font-size: 32px;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      color: #fff;
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      background: linear-gradient(45deg, #3498db, #e74c3c, #9b59b6);
+      background-size: 300% 300%;
+      background-position: 0% 50%;
+      transition: transform 0.5s ease, box-shadow 0.5s ease, background 2s ease;
+      animation: wave 4s infinite alternate;
+    }
+
+    .particle {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background-color: rgba(255, 192, 203, 0.8);
+      border-radius: 50%;
+      animation: particles 5s infinite;
+    }
+
+    .animated-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px rgba(255, 192, 203, 0.8);
+    }
+
+    .animated-button:hover .particle {
+      animation: particles 2s infinite;
+    }
+
+    .animated-button:hover {
+      animation: glow 4s infinite alternate;
+    }
+
+    .animated-button:hover .particle {
+      animation: particles 2s infinite;
+    }
+
+    .animated-button:hover {
+      box-shadow: 0 0 40px rgba(255, 192, 203, 0.8);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="animated-button">
+    <div class="particle"></div>
+    Divine Beauty
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    .animated-button {
+      display: inline-block;
+      padding: 15px 30px;
+      font-size: 18px;
+      color: greenyellow;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      color: #7d2cc0;
+      background: linear-gradient(45deg, #66ff0e, #e74c3c);
+      border-radius: 50px;
+      overflow: hidden;
+      position: relative;
+      transition: box-shadow 0.3s ease;
+      animation: pulse 2s infinite ease-in-out;
+    }
+
+    .animated-button:hover {
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#" class="animated-button">Joy Bangla</a>
+
+</body>
+</html>
